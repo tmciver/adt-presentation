@@ -1,0 +1,20 @@
+#+TITLE: Algebraic Data Types (ADTs)
+#+OPTIONS: toc:1, num:nil
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.8.0
+#+REVEAL_THEME: moon
+
+* What's a Type?
+
+** 
+A set of values
+
+* Product Types
+
+** You've Probably Used Them Before
+#+ATTR_REVEAL: :frag (appear)
+- pair
+- tuple
+- record
+- class
+
+* Sum Types
