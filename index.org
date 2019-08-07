@@ -8,7 +8,7 @@
 ** A type can be thought of as a set of values 
 #+ATTR_REVEAL: :frag (appear)
 - An ~int~ can hold only the integers
-- A ~boolean~ can hold on the values ~true~ and ~false~
+- A ~boolean~ can hold only the values ~true~ and ~false~
 - A value of type ~RGBColor~ may only be able to hold the values ~Red~, ~Green~ and ~Blue~
 - A value of type ~SomeClass~ can hold instances of ~SomeClass~ or its sub-classes
 
