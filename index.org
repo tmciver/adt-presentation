@@ -18,6 +18,7 @@
 - pair
 - tuple
 - record
+- struct
 - class
 
 * Sum Types
