@@ -23,3 +23,12 @@
 - class
 
 * Sum Types
+
+** Also Known As
+#+ATTR_REVEAL: :frag (appear)
+- tagged union
+- untagged union
+- discriminated union
+- disjoint union
+- variant
+- "one of" type
