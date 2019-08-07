@@ -1,4 +1,4 @@
-#+TITLE: Algebraic Data Types (ADTs)
+#+TITLE: Algebraic Data Types
 #+OPTIONS: toc:1, num:nil
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.8.0
 #+REVEAL_THEME: moon
