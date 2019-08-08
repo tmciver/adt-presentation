@@ -37,8 +37,8 @@
 Used to create a new type from two or more existing types.
 #+ATTR_REVEAL: :frag (appear)
 For example, you could create a type that could hold an integer /or/ a string.
-#+ATTR_REVEAL: :frag (appear)
-#+begin_my_group
+
+** Haskell's Canonical Union
 In Haskell, the ~Either~ data type is used for this purpose:
 #+begin_src haskell
 data Either a b = Left a | Right b
@@ -47,4 +47,3 @@ type IntOrString = Either Int String
 someData :: IntOrString
 someData = Left 42 -- or Right "Hello!"
 #+end_src
-#+end_my_group

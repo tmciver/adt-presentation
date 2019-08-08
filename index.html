@@ -26,16 +26,16 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Algebraic Data Types</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2019-08-07 Wed 12:12</p>
+<section id="sec-title-slide"><h1 class="title">Algebraic Data Types</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2019-08-08 Thu 11:15</p>
 </section>
 <section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-orga07715d">What's a Type?</a></li>
-<li><a href="#/slide-org62afaca">Product Types</a></li>
-<li><a href="#/slide-orgf802642">Sum Types</a></li>
+<li><a href="#/slide-orgd0164dc">What's a Type?</a></li>
+<li><a href="#/slide-org10e9c1e">Product Types</a></li>
+<li><a href="#/slide-org782a44b">Sum Types</a></li>
 </ul>
 </div>
 </div>
@@ -43,12 +43,12 @@
 
 <section>
 <section id="slide-sec-">
-<h2 id="orga07715d">What's a Type?</h2>
-<div class="outline-text-2" id="text-orga07715d">
+<h2 id="orgd0164dc">What's a Type?</h2>
+<div class="outline-text-2" id="text-orgd0164dc">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org99d9b6f">A type can be thought of as a set of values</h3>
+<h3 id="orgb54fc51">A type can be thought of as a set of values</h3>
 <ul>
 <li class="fragment appear">An <code>int</code> can hold only the integers</li>
 <li class="fragment appear">A <code>boolean</code> can hold only the values <code>true</code> and <code>false</code></li>
@@ -61,12 +61,12 @@
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="org62afaca">Product Types</h2>
-<div class="outline-text-2" id="text-org62afaca">
+<h2 id="org10e9c1e">Product Types</h2>
+<div class="outline-text-2" id="text-org10e9c1e">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="orgc331a7b">You've Probably Used Them Before</h3>
+<h3 id="orgca213a7">You've Probably Used Them Before</h3>
 <ul>
 <li class="fragment appear">pair</li>
 <li class="fragment appear">tuple</li>
@@ -80,12 +80,12 @@
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="orgf802642">Sum Types</h2>
-<div class="outline-text-2" id="text-orgf802642">
+<h2 id="org782a44b">Sum Types</h2>
+<div class="outline-text-2" id="text-org782a44b">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org234f111">Also Known As</h3>
+<h3 id="orgb6ea3df">Also Known As</h3>
 <ul>
 <li class="fragment appear">tagged union</li>
 <li class="fragment appear">untagged union</li>
@@ -98,14 +98,17 @@
 
 </section>
 <section id="slide-sec-">
-<h3 id="org1bc9940">Sum Types</h3>
+<h3 id="org2c03f08">Sum Types</h3>
 <p>
 Used to create a new type from two or more existing types.
 </p>
 <p class="fragment (appear)">
 For example, you could create a type that could hold an integer <i>or</i> a string.
 </p>
-<div class="fragment (appear) my_group">
+
+</section>
+<section id="slide-sec-">
+<h3 id="org96a27d2">Haskell's Canonical Union</h3>
 <p>
 In Haskell, the <code>Either</code> data type is used for this purpose:
 </p>
@@ -117,8 +120,6 @@ In Haskell, the <code>Either</code> data type is used for this purpose:
 <span style="color: #fce94f;">someData</span> <span style="color: #fcaf3e;">::</span> <span style="color: #8cc4ff;">IntOrString</span>
 <span style="color: #fce94f;">someData</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Left</span> 42 <span style="color: #73d216;">-- </span><span style="color: #73d216;">or Right "Hello!"</span>
 </code></pre>
-</div>
-
 </div>
 </section>
 </section>
