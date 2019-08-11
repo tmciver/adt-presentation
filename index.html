@@ -26,16 +26,16 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Algebraic Data Types</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2019-08-11 Sun 09:01</p>
+<section id="sec-title-slide"><h1 class="title">Algebraic Data Types</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2019-08-11 Sun 16:52</p>
 </section>
 <section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-org58ec14f">What's a Type?</a></li>
-<li><a href="#/slide-org045e354">Product Types</a></li>
-<li><a href="#/slide-org6a17ca9">Sum Types</a></li>
+<li><a href="#/slide-orgaae062a">What's a Type?</a></li>
+<li><a href="#/slide-org293f9ae">Product Types</a></li>
+<li><a href="#/slide-org9edb891">Sum Types</a></li>
 </ul>
 </div>
 </div>
@@ -43,12 +43,12 @@
 
 <section>
 <section id="slide-sec-">
-<h2 id="org58ec14f">What's a Type?</h2>
-<div class="outline-text-2" id="text-org58ec14f">
+<h2 id="orgaae062a">What's a Type?</h2>
+<div class="outline-text-2" id="text-orgaae062a">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="orgb4adb8d">A type can be thought of as a set of values</h3>
+<h3 id="orgbacdfd0">A type can be thought of as a set of values</h3>
 <ul>
 <li class="fragment appear">An <code>int</code> can hold only the integers</li>
 <li class="fragment appear">A <code>boolean</code> can hold only the values <code>true</code> and <code>false</code></li>
@@ -61,12 +61,12 @@
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="org045e354">Product Types</h2>
-<div class="outline-text-2" id="text-org045e354">
+<h2 id="org293f9ae">Product Types</h2>
+<div class="outline-text-2" id="text-org293f9ae">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org2e251f3">You've Probably Used Them Before</h3>
+<h3 id="orgad3b142">You've Probably Used Them Before</h3>
 <ul>
 <li class="fragment appear">pair</li>
 <li class="fragment appear">tuple</li>
@@ -80,12 +80,12 @@
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="org6a17ca9">Sum Types</h2>
-<div class="outline-text-2" id="text-org6a17ca9">
+<h2 id="org9edb891">Sum Types</h2>
+<div class="outline-text-2" id="text-org9edb891">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="orgd458e4e">Also Known As</h3>
+<h3 id="orge505230">Also Known As</h3>
 <ul>
 <li class="fragment appear">tagged union</li>
 <li class="fragment appear">variant</li>
@@ -95,7 +95,7 @@
 
 </section>
 <section id="slide-sec-">
-<h3 id="org9429579">Sum Types</h3>
+<h3 id="orgc8847fe">Sum Types</h3>
 <p>
 Used to create a new type from two or more existing types.
 </p>
@@ -105,7 +105,7 @@ For example, you could create a type that could hold an integer <i>or</i> a stri
 
 </section>
 <section id="slide-sec-">
-<h3 id="org907fd11">Haskell's Canonical Union</h3>
+<h3 id="orgf40ce7b">Haskell's Canonical Union</h3>
 <p>
 In Haskell, the <code>Either</code> data type is used for this purpose:
 </p>
@@ -129,7 +129,7 @@ In Haskell, the <code>Either</code> data type is used for this purpose:
 
 </section>
 <section id="slide-sec-">
-<h3 id="orgd973a40">In Scala</h3>
+<h3 id="org4d0f2c6">In Scala</h3>
 <div class="org-src-container">
 
 <pre  class="src src-scala"><code trim><span style="color: #e090d7;">sealed</span> <span style="color: #b4fa70;">trait</span> <span style="color: #8cc4ff;">Either</span>[<span style="color: #e9b2e3;">A</span>, <span style="color: #e9b2e3;">B</span>]
@@ -143,7 +143,7 @@ In Haskell, the <code>Either</code> data type is used for this purpose:
 
 </section>
 <section id="slide-sec-">
-<h3 id="org460011d">What About Three Types?</h3>
+<h3 id="org37f88d5">What About Three Types?</h3>
 <p>
 In Haskell:
 </p>
@@ -164,7 +164,33 @@ In Haskell:
 
 </section>
 <section id="slide-sec-">
-<h3 id="orga79bba4">More About Unions</h3>
+<h3 id="orgb1deb3e">What About Three Types?</h3>
+<p>
+Could have also reused <code>IntOrString</code>
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-haskell"><code trim><span style="color: #b4fa70;">type</span> <span style="color: #8cc4ff;">IntOrStringOrBool</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Either</span> (<span style="color: #8cc4ff;">IntOrString</span>) <span style="color: #8cc4ff;">Bool</span>
+
+<span style="color: #fce94f;">someInt</span> <span style="color: #fcaf3e;">::</span> <span style="color: #8cc4ff;">IntOrStringOrBool</span>
+<span style="color: #fce94f;">someInt</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Left</span> (<span style="color: #8cc4ff;">Left</span> 42)
+
+<span style="color: #fce94f;">someString</span> <span style="color: #fcaf3e;">::</span> <span style="color: #8cc4ff;">IntOrStringOrBool</span>
+<span style="color: #fce94f;">someString</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Left</span> (<span style="color: #8cc4ff;">Right</span> <span style="color: #e9b96e;">"Hello!"</span>)
+
+<span style="color: #fce94f;">someBool</span> <span style="color: #fcaf3e;">::</span> <span style="color: #8cc4ff;">IntOrStringOrBool</span>
+<span style="color: #fce94f;">someBool</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Right</span> <span style="color: #8cc4ff;">True</span>
+
+<span style="color: #fce94f;">toString</span> <span style="color: #fcaf3e;">::</span> <span style="color: #8cc4ff;">IntOrStringOrBool</span> <span style="color: #fcaf3e;">-&gt;</span> <span style="color: #8cc4ff;">String</span>
+<span style="color: #fce94f;">toString</span> (<span style="color: #8cc4ff;">Left</span> (<span style="color: #8cc4ff;">Left</span> i)) <span style="color: #fcaf3e;">=</span> show i
+<span style="color: #fce94f;">toString</span> (<span style="color: #8cc4ff;">Left</span> (<span style="color: #8cc4ff;">Right</span> s)) <span style="color: #fcaf3e;">=</span> s
+<span style="color: #fce94f;">toString</span> (<span style="color: #8cc4ff;">Right</span> b) <span style="color: #fcaf3e;">=</span> show b
+</code></pre>
+</div>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org71cd48a">More About Unions</h3>
 <p>
 tagged, untagged, discriminated, disjoint
 </p>

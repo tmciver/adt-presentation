@@ -77,5 +77,25 @@ someBool :: IntOrStringOrBool
 someBool = Right (Right True)
 #+end_src
 
+** What About Three Types?
+Could have also reused ~IntOrString~
+#+begin_src haskell
+type IntOrStringOrBool = Either IntOrString Bool
+
+someInt :: IntOrStringOrBool
+someInt = Left (Left 42)
+
+someString :: IntOrStringOrBool
+someString = Left (Right "Hello!")
+
+someBool :: IntOrStringOrBool
+someBool = Right True
+
+toString :: IntOrStringOrBool -> String
+toString (Left (Left i)) = show i
+toString (Left (Right s)) = s
+toString (Right b) = show b
+#+end_src
+
 ** More About Unions
 tagged, untagged, discriminated, disjoint
