@@ -45,6 +45,12 @@ someData :: IntOrString
 someData = Left 42 -- or Right "Hello!"
 #+end_src
 
+#+begin_src haskell
+someFunction :: IntOrString -> String
+someFunction (Left i) = show i
+someFunction (Right s) = s
+#+end_src
+
 ** In Scala
 #+HEADER: :exports both
 #+begin_src scala :dir ./ensime-test :results pp
