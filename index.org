@@ -56,5 +56,20 @@ type IntOrString = Either[Int, String]
 val someData: IntOrString = Left(42) // or Right("Hello!")
 #+end_src
 
+** What About Three Types?
+In Haskell:
+#+begin_src haskell
+type IntOrStringOrBool = Either Int (Either String Bool)
+
+someInt :: IntOrStringOrBool
+someInt = Left 42
+
+someString :: IntOrStringOrBool
+someString = Right (Left "Hello!")
+
+someBool :: IntOrStringOrBool
+someBool = Right (Right True)
+#+end_src
+
 ** More About Unions
 tagged, untagged, discriminated, disjoint
