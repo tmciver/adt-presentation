@@ -27,9 +27,6 @@
 ** Also Known As
 #+ATTR_REVEAL: :frag (appear)
 - tagged union
-- untagged union
-- discriminated union
-- disjoint union
 - variant
 - "one of" type
 
@@ -47,3 +44,17 @@ type IntOrString = Either Int String
 someData :: IntOrString
 someData = Left 42 -- or Right "Hello!"
 #+end_src
+
+** In Scala
+#+HEADER: :exports both
+#+begin_src scala :dir ./ensime-test :results pp
+sealed trait Either[A, B]
+case class Left[A, B](a: A) extends Either[A, B]
+case class Right[A, B](b: B) extends Either[A, B]
+
+type IntOrString = Either[Int, String]
+val someData: IntOrString = Left(42) // or Right("Hello!")
+#+end_src
+
+** More About Unions
+tagged, untagged, discriminated, disjoint

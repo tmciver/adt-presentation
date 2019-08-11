@@ -26,16 +26,16 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Algebraic Data Types</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2019-08-08 Thu 11:15</p>
+<section id="sec-title-slide"><h1 class="title">Algebraic Data Types</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2019-08-10 Sat 21:28</p>
 </section>
 <section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-orgd0164dc">What's a Type?</a></li>
-<li><a href="#/slide-org10e9c1e">Product Types</a></li>
-<li><a href="#/slide-org782a44b">Sum Types</a></li>
+<li><a href="#/slide-org6076c8c">What's a Type?</a></li>
+<li><a href="#/slide-orge238160">Product Types</a></li>
+<li><a href="#/slide-org5d97ff4">Sum Types</a></li>
 </ul>
 </div>
 </div>
@@ -43,12 +43,12 @@
 
 <section>
 <section id="slide-sec-">
-<h2 id="orgd0164dc">What's a Type?</h2>
-<div class="outline-text-2" id="text-orgd0164dc">
+<h2 id="org6076c8c">What's a Type?</h2>
+<div class="outline-text-2" id="text-org6076c8c">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="orgb54fc51">A type can be thought of as a set of values</h3>
+<h3 id="orgef0ab7e">A type can be thought of as a set of values</h3>
 <ul>
 <li class="fragment appear">An <code>int</code> can hold only the integers</li>
 <li class="fragment appear">A <code>boolean</code> can hold only the values <code>true</code> and <code>false</code></li>
@@ -61,12 +61,12 @@
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="org10e9c1e">Product Types</h2>
-<div class="outline-text-2" id="text-org10e9c1e">
+<h2 id="orge238160">Product Types</h2>
+<div class="outline-text-2" id="text-orge238160">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="orgca213a7">You've Probably Used Them Before</h3>
+<h3 id="org875518d">You've Probably Used Them Before</h3>
 <ul>
 <li class="fragment appear">pair</li>
 <li class="fragment appear">tuple</li>
@@ -80,17 +80,14 @@
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="org782a44b">Sum Types</h2>
-<div class="outline-text-2" id="text-org782a44b">
+<h2 id="org5d97ff4">Sum Types</h2>
+<div class="outline-text-2" id="text-org5d97ff4">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="orgb6ea3df">Also Known As</h3>
+<h3 id="orga51ea2d">Also Known As</h3>
 <ul>
 <li class="fragment appear">tagged union</li>
-<li class="fragment appear">untagged union</li>
-<li class="fragment appear">discriminated union</li>
-<li class="fragment appear">disjoint union</li>
 <li class="fragment appear">variant</li>
 <li class="fragment appear">"one of" type</li>
 
@@ -98,7 +95,7 @@
 
 </section>
 <section id="slide-sec-">
-<h3 id="org2c03f08">Sum Types</h3>
+<h3 id="org22f1a0d">Sum Types</h3>
 <p>
 Used to create a new type from two or more existing types.
 </p>
@@ -108,7 +105,7 @@ For example, you could create a type that could hold an integer <i>or</i> a stri
 
 </section>
 <section id="slide-sec-">
-<h3 id="org96a27d2">Haskell's Canonical Union</h3>
+<h3 id="orgd5c7465">Haskell's Canonical Union</h3>
 <p>
 In Haskell, the <code>Either</code> data type is used for this purpose:
 </p>
@@ -121,6 +118,27 @@ In Haskell, the <code>Either</code> data type is used for this purpose:
 <span style="color: #fce94f;">someData</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Left</span> 42 <span style="color: #73d216;">-- </span><span style="color: #73d216;">or Right "Hello!"</span>
 </code></pre>
 </div>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgea1d369">In Scala</h3>
+<div class="org-src-container">
+
+<pre  class="src src-scala"><code trim><span style="color: #e090d7;">sealed</span> <span style="color: #b4fa70;">trait</span> <span style="color: #8cc4ff;">Either</span>[<span style="color: #e9b2e3;">A</span>, <span style="color: #e9b2e3;">B</span>]
+<span style="color: #b4fa70;">case</span> <span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">Left</span>[<span style="color: #e9b2e3;">A</span>, <span style="color: #e9b2e3;">B</span>](a<span style="color: #b4fa70;">:</span> <span style="color: #8cc4ff;">A</span>) <span style="color: #b4fa70;">extends</span> <span style="color: #8cc4ff;">Either</span>[<span style="color: #e9b2e3;">A</span>, <span style="color: #e9b2e3;">B</span>]
+<span style="color: #b4fa70;">case</span> <span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">Right</span>[<span style="color: #e9b2e3;">A</span>, <span style="color: #e9b2e3;">B</span>](b<span style="color: #b4fa70;">:</span> <span style="color: #8cc4ff;">B</span>) <span style="color: #b4fa70;">extends</span> <span style="color: #8cc4ff;">Either</span>[<span style="color: #e9b2e3;">A</span>, <span style="color: #e9b2e3;">B</span>]
+
+<span style="color: #b4fa70;">type</span> <span style="color: #e9b2e3;">IntOrString</span> <span style="color: #b4fa70;">=</span> <span style="color: #e9b2e3;">Either</span>[<span style="color: #e9b2e3;">Int</span>, <span style="color: #e9b2e3;">String</span>]
+<span style="color: #b4fa70;">val</span> <span style="color: #fcaf3e;">someData</span><span style="color: #b4fa70;">:</span> <span style="color: #8cc4ff;">IntOrString</span> <span style="color: #b4fa70;">=</span> <span style="color: #e9b2e3;">Left</span>(<span style="color: #e9b2e3;">42</span>) <span style="color: #73d216;">// </span><span style="color: #73d216;">or Right("Hello!")</span>
+</code></pre>
+</div>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgac5a372">More About Unions</h3>
+<p>
+tagged, untagged, discriminated, disjoint
+</p>
 </section>
 </section>
 </div>
