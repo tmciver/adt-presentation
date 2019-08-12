@@ -97,5 +97,22 @@ toString (Left (Right s)) = s
 toString (Right b) = show b
 #+end_src
 
+** A Better Way
+But most languages that support sum types make this much easier.
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+data IntOrStringOrBool = I Int
+                       | S String
+                       | B Bool
+#+end_src
+#+ATTR_REVEAL: :frag (appear)
+And then ~toString~ becomes:
+#+begin_src haskell
+toString :: IntOrStringOrBool -> String
+toString (I i) = show i
+toString (S s) = s
+toString (B b) = show b
+#+end_src
+
 ** More About Unions
 tagged, untagged, discriminated, disjoint
