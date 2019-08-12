@@ -26,16 +26,16 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Algebraic Data Types</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2019-08-11 Sun 22:33</p>
+<section id="sec-title-slide"><h1 class="title">Algebraic Data Types</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2019-08-11 Sun 22:52</p>
 </section>
 <section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-orga3145d6">What's a Type?</a></li>
-<li><a href="#/slide-org714465e">Product Types</a></li>
-<li><a href="#/slide-orgbebe087">Sum Types</a></li>
+<li><a href="#/slide-orgaa4fee4">What's a Type?</a></li>
+<li><a href="#/slide-org83fb366">Product Types</a></li>
+<li><a href="#/slide-org2f88bb2">Sum Types</a></li>
 </ul>
 </div>
 </div>
@@ -43,12 +43,12 @@
 
 <section>
 <section id="slide-sec-">
-<h2 id="orga3145d6">What's a Type?</h2>
-<div class="outline-text-2" id="text-orga3145d6">
+<h2 id="orgaa4fee4">What's a Type?</h2>
+<div class="outline-text-2" id="text-orgaa4fee4">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org67ba076">A type can be thought of as a set of values</h3>
+<h3 id="org19507cb">A type can be thought of as a set of values</h3>
 <ul>
 <li class="fragment appear">An <code>int</code> can hold only the integers</li>
 <li class="fragment appear">A <code>boolean</code> can hold only the values <code>true</code> and <code>false</code></li>
@@ -61,12 +61,12 @@
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="org714465e">Product Types</h2>
-<div class="outline-text-2" id="text-org714465e">
+<h2 id="org83fb366">Product Types</h2>
+<div class="outline-text-2" id="text-org83fb366">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="orge482b76">You've Probably Used Them Before</h3>
+<h3 id="orgd83a620">You've Probably Used Them Before</h3>
 <ul>
 <li class="fragment appear">pair</li>
 <li class="fragment appear">tuple</li>
@@ -80,12 +80,12 @@
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="orgbebe087">Sum Types</h2>
-<div class="outline-text-2" id="text-orgbebe087">
+<h2 id="org2f88bb2">Sum Types</h2>
+<div class="outline-text-2" id="text-org2f88bb2">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org0bad24f">Also Known As</h3>
+<h3 id="orgcb1448e">Also Known As</h3>
 <ul>
 <li class="fragment appear">tagged union</li>
 <li class="fragment appear">variant</li>
@@ -95,7 +95,7 @@
 
 </section>
 <section id="slide-sec-">
-<h3 id="orgfce450c">Sum Types</h3>
+<h3 id="org2a88ccd">Sum Types</h3>
 <p>
 Used to create a new type from two or more existing types.
 </p>
@@ -105,7 +105,7 @@ For example, you could create a type that could hold an integer <i>or</i> a stri
 
 </section>
 <section id="slide-sec-">
-<h3 id="org3d1d060">Haskell's Canonical Union</h3>
+<h3 id="orgd9bb071">Haskell's Canonical Union</h3>
 <p>
 In Haskell, the <code>Either</code> data type is used for this purpose:
 </p>
@@ -129,7 +129,7 @@ In Haskell, the <code>Either</code> data type is used for this purpose:
 
 </section>
 <section id="slide-sec-">
-<h3 id="org032dfec">In Scala</h3>
+<h3 id="org00bb665">In Scala</h3>
 <div class="org-src-container">
 
 <pre  class="src src-scala"><code trim><span style="color: #e090d7;">sealed</span> <span style="color: #b4fa70;">trait</span> <span style="color: #8cc4ff;">Either</span>[<span style="color: #e9b2e3;">A</span>, <span style="color: #e9b2e3;">B</span>]
@@ -143,7 +143,7 @@ In Haskell, the <code>Either</code> data type is used for this purpose:
 
 </section>
 <section id="slide-sec-">
-<h3 id="org28b421b">What About Three Types?</h3>
+<h3 id="org4bc2399">What About Three Types?</h3>
 <p>
 In Haskell:
 </p>
@@ -164,7 +164,7 @@ In Haskell:
 
 </section>
 <section id="slide-sec-">
-<h3 id="org3fe83c9">What About Three Types?</h3>
+<h3 id="org840dd04">What About Three Types?</h3>
 <p>
 Could have also reused <code>IntOrString</code>
 </p>
@@ -190,7 +190,7 @@ Could have also reused <code>IntOrString</code>
 
 </section>
 <section id="slide-sec-">
-<h3 id="org7c9d66a">A Better Way</h3>
+<h3 id="orgf62318b">A Better Way</h3>
 <p>
 But most languages that support sum types make this much easier.
 </p>
@@ -218,7 +218,7 @@ And then <code>toString</code> becomes:
 
 </section>
 <section id="slide-sec-">
-<h3 id="org702871f">Constructors Don't <i>Need</i> to Accept Values</h3>
+<h3 id="orgbce7af5">Constructors Don't <i>Need</i> to Accept Values</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #b4fa70;">data</span> <span style="color: #8cc4ff;">RGBColor</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Red</span>
@@ -229,7 +229,33 @@ And then <code>toString</code> becomes:
 
 </section>
 <section id="slide-sec-">
-<h3 id="orge339320">More About Unions</h3>
+<h3 id="org8af1df3">How Many Members?</h3>
+<div class="org-src-container">
+
+<pre  class="fragment (appear)"><code trim><span style="color: #b4fa70;">data</span> <span style="color: #8cc4ff;">RGBColor</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Red</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">Green</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">Blue</span>
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre  class="fragment (appear)"><code trim><span style="color: #b4fa70;">data</span> <span style="color: #8cc4ff;">RGBColorOrBool</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">RGB</span> <span style="color: #8cc4ff;">RGBColor</span>
+                    <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">B</span> <span style="color: #8cc4ff;">Bool</span>
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre  class="fragment (appear)"><code trim><span style="color: #b4fa70;">data</span> <span style="color: #8cc4ff;">IntOrStringOrBool</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">I</span> <span style="color: #8cc4ff;">Int</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">S</span> <span style="color: #8cc4ff;">String</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">B</span> <span style="color: #8cc4ff;">Bool</span>
+</code></pre>
+</div>
+
+<p class="fragment (appear)">
+So the total number of members is the <i>sum</i> of the members from each constructor.
+</p>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgb53d731">More About Unions</h3>
 <p>
 tagged, untagged, discriminated, disjoint
 </p>

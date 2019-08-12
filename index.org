@@ -123,5 +123,25 @@ data RGBColor = Red
               | Blue
 #+end_src
 
+** How Many Members?
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+data RGBColor = Red | Green | Blue
+#+end_src
+
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+data RGBColorOrBool = RGB RGBColor
+                    | B Bool
+#+end_src
+
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+data IntOrStringOrBool = I Int | S String | B Bool
+#+end_src
+
+#+ATTR_REVEAL: :frag (appear)
+So the total number of members is the /sum/ of the members from each constructor.
+
 ** More About Unions
 tagged, untagged, discriminated, disjoint
