@@ -106,6 +106,7 @@ data IntOrStringOrBool = I Int
                        | B Bool
 #+end_src
 #+ATTR_REVEAL: :frag (appear)
+#+begin_group
 And then ~toString~ becomes:
 #+begin_src haskell
 toString :: IntOrStringOrBool -> String
@@ -113,6 +114,7 @@ toString (I i) = show i
 toString (S s) = s
 toString (B b) = show b
 #+end_src
+#+end_group
 
 ** More About Unions
 tagged, untagged, discriminated, disjoint
