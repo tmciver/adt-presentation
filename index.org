@@ -136,6 +136,40 @@ data Int16OrRGBColorOrBool = I Int16 | RGBColor | B Bool
 #+ATTR_REVEAL: :frag (appear)
 The total number of members is the /sum/ of the members from each constructor.
 
+** The Constructors /Tag/ the Values
+Why can't we do this?
+#+begin_src haskell
+type RGBColorOrBool = RGBColor
+                    | Bool
+#+end_src
+
+Instead of this?
+#+begin_src haskell
+data RGBColorOrBool = RGB RGBColor
+                    | B Bool
+#+end_src
+
+** The Constructors /Tag/ the Values (Continued)
+
+#+begin_group
+Because of situations like this:
+#+begin_src haskell
+data TurnDirection = Left | Right
+data MoralDirection = Right | Wrong
+type Direction = TurnDirection | MoralDirection -- invalid Haskell
+#+end_src
+#+end_group
+
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+isMoral :: Direction -> Bool
+isMoral Right = True
+isMoral _ = False
+#+end_src
+
+#+ATTR_REVEAL: :frag (appear)
+What ~Right~ did we get?
+
 * Product Type
 
 ** You've Probably Used Them Before
