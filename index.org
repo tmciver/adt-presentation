@@ -170,7 +170,7 @@ isMoral _ = False
 #+ATTR_REVEAL: :frag (appear)
 What ~Right~ did we get?
 
-* Product Type
+* Product Types
 
 ** You've Probably Used Them Before
 #+ATTR_REVEAL: :frag (appear)
@@ -205,6 +205,17 @@ type Person = (String, String, Int)
 #+begin_src haskell
 type Score = Int
 type Player = (Person, Score)
+#+end_src
+
+** Records
+Like tuples but each field has a name.
+
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+data Person = Person { firstName :: String
+                     , lastName :: String
+                     , age :: Int
+                     }
 #+end_src
 
 * More About Unions
