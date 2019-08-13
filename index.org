@@ -117,21 +117,24 @@ data RGBColor = Red
 #+ATTR_REVEAL: :frag (appear)
 #+begin_src haskell
 data RGBColor = Red | Green | Blue
+-- {Red, Green, Blue}
 #+end_src
 
 #+ATTR_REVEAL: :frag (appear)
 #+begin_src haskell
 data RGBColorOrBool = RGB RGBColor
                     | B Bool
+-- {RGB Red, RGB Green, RGB Blue, B True, B False}
 #+end_src
 
 #+ATTR_REVEAL: :frag (appear)
 #+begin_src haskell
-data IntOrStringOrBool = I Int | S String | B Bool
+data Int16OrRGBColorOrBool = I Int16 | RGBColor | B Bool
+-- 65,536 + 5 = 65,541
 #+end_src
 
 #+ATTR_REVEAL: :frag (appear)
-So the total number of members is the /sum/ of the members from each constructor.
+The total number of members is the /sum/ of the members from each constructor.
 
 * Product Type
 
