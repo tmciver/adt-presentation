@@ -106,7 +106,7 @@ toString (B b) = show b
 #+end_src
 #+end_group
 
-** Constructors Don't /Need/ to Accept Values
+** Constructors Don't Need to Accept Values
 #+begin_src haskell
 data RGBColor = Red
               | Green
