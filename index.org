@@ -12,16 +12,6 @@
 - A value of type ~RGBColor~ may only be able to hold the values ~Red~, ~Green~ and ~Blue~
 - A value of type ~SomeClass~ can hold instances of ~SomeClass~ or its sub-classes
 
-* Product Types
-
-** You've Probably Used Them Before
-#+ATTR_REVEAL: :frag (appear)
-- pair
-- tuple
-- record
-- struct
-- class
-
 * Sum Types
 
 ** Also Known As
@@ -143,5 +133,42 @@ data IntOrStringOrBool = I Int | S String | B Bool
 #+ATTR_REVEAL: :frag (appear)
 So the total number of members is the /sum/ of the members from each constructor.
 
-** More About Unions
+* Product Type
+
+** You've Probably Used Them Before
+#+ATTR_REVEAL: :frag (appear)
+- pair
+- tuple
+- record
+- struct
+- class
+
+** Pairs and Tuples
+Tuples are like lists of values with two important exceptions:
+#+ATTR_REVEAL: :frag (appear)
+- They are heterogenous, i.e., each position can have a different type.
+- Their size is fixed, i.e., you cannot add an element.
+
+#+ATTR_REVEAL: :frag (appear)
+A pair is simply a two-element tuple.
+
+** Tuple Examples
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+type Point = (Double, Double) -- (x, y)
+#+end_src
+
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+type Person = (String, String, Int)
+-- (First name, last name, age)
+#+end_src
+
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+type Score = Int
+type Player = (Person, Score)
+#+end_src
+
+* More About Unions
 tagged, untagged, discriminated, disjoint
