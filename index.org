@@ -240,5 +240,27 @@ public class Person {
 }
 #+end_src
 
+* ADTs in OOP
+
+** 
+We know that object oriented classes are a kind of product type, but what about sum types?
+
+** Enums
+An enum is a sum type.
+
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src java
+// Java
+public enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+    THURSDAY, FRIDAY, SATURDAY
+}
+
+Day today = Day.Wednesday;
+#+end_src
+
+#+ATTR_REVEAL: :frag (appear)
+~Day~ is the type and the listed days are the only possible values.
+
 * More About Unions
 tagged, untagged, discriminated, disjoint
