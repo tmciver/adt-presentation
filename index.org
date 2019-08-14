@@ -262,5 +262,20 @@ Day today = Day.Wednesday;
 #+ATTR_REVEAL: :frag (appear)
 ~Day~ is the type and the listed days are the only possible values.
 
+** Simulating with Constants
+You can simulate sum types in languages like C and PHP using constants.
+
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src php
+// PHP
+abstract class Level {
+  const LOW = 1;
+  const MEDIUM = 2;
+  const HIGH = 3;
+}
+
+$level = Level::MEDIUM;
+#+end_src
+
 * More About Unions
 tagged, untagged, discriminated, disjoint
