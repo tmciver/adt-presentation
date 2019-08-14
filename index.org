@@ -331,5 +331,32 @@ class Banana extends Fruit {
 #+REVEAL_HTML: </div>
 #+end_group
 
+* Example Model
+
+** The Obligatory Todo Application
+Let's model a ~Todo~.  A todo should track:
+#+ATTR_REVEAL: :frag (appear)
+- a due date
+- a title
+- a description of what's to be done
+- some sort of status
+
+** Todo (Continued)
+#+begin_src haskell
+data Status = New | Started | Completed | Deleted
+type Title = String
+type Description = String
+
+data Todo = Todo { status :: Status
+                 , title :: Title
+                 , description :: Description
+                 , dueDate :: DateTime}
+
+startTodo :: Todo -> Either String Todo
+startTodo todo = case (status todo) of
+  New -> Right (todo { status = Started })
+  _ -> Left "Can only start a new todo."
+#+end_src
+
 * More About Unions
 tagged, untagged, discriminated, disjoint
