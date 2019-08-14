@@ -139,7 +139,7 @@ The total number of members is the /sum/ of the members from each constructor.
 ** The Constructors /Tag/ the Values
 Why can't we do this?
 #+begin_src haskell
-type RGBColorOrBool = RGBColor
+type RGBColorOrBool = RGBColor  -- invalid Haskell
                     | Bool
 #+end_src
 
