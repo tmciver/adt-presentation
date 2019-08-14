@@ -282,6 +282,8 @@ function hasSeeds($fruit) {
 ** 
 But the best, albeit verbose, method is sub-classing.
 #+ATTR_REVEAL: :frag (appear)
+#+begin_group
+#+REVEAL_HTML: <div class="column" style="float:left; width: 65%">
 #+begin_src php
 abstract class Fruit {
   abstract function hasSeeds();
@@ -296,6 +298,11 @@ class Banana extends Fruit {
   function hasSeeds() { return false; }
 }
 #+end_src
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:left; width: 35%">
+[[./img/sum-type-via-subclassing.png]]
+#+REVEAL_HTML: </div>
+#+end_group
 
 * More About Unions
 tagged, untagged, discriminated, disjoint
