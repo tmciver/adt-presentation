@@ -268,13 +268,33 @@ You can simulate sum types in languages like C and PHP using constants.
 #+ATTR_REVEAL: :frag (appear)
 #+begin_src php
 // PHP
-abstract class Level {
-  const LOW = 1;
-  const MEDIUM = 2;
-  const HIGH = 3;
+abstract class Fruit {
+  const APPLE = 1
+  const CHERRY = 2;
+  const BANANA = 3;
 }
 
-$level = Level::MEDIUM;
+function hasSeeds($fruit) {
+  return $fruit != Fruit::BANANA
+}
+#+end_src
+
+** 
+But the best, albeit verbose, method is sub-classing.
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src php
+abstract class Fruit {
+  abstract function hasSeeds();
+}
+class Apple extends Fruit {
+  function hasSeeds() { return true; }
+}
+class Cherry extends Fruit {
+  function hasSeeds() { return true; }
+}
+class Banana extends Fruit {
+  function hasSeeds() { return false; }
+}
 #+end_src
 
 * More About Unions
