@@ -240,6 +240,28 @@ public class Person {
 }
 #+end_src
 
+** How Many Members?
+
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+data RGBColor = Red | Green | Blue
+
+type RGBColorAndBool = (RGBColor, Bool)
+#+end_src
+
+#+ATTR_REVEAL: :frag (appear)
+#+begin_src haskell
+rgbColorAndBool1 = (Red, True)
+rgbColorAndBool1 = (Green, True)
+rgbColorAndBool1 = (Blue, True)
+rgbColorAndBool1 = (Red, False)
+rgbColorAndBool1 = (Green, False)
+rgbColorAndBool1 = (Blue, False)
+#+end_src
+
+#+ATTR_REVEAL: :frag (appear)
+3 * 2 = 6
+
 * ADTs in OOP
 
 ** 
