@@ -128,13 +128,18 @@ data RGBColorOrBool = RGB RGBColor
 #+end_src
 
 #+ATTR_REVEAL: :frag (appear)
+3 + 2 = 5
+
+#+ATTR_REVEAL: :frag (appear)
 #+begin_src haskell
 data Int16OrRGBColorOrBool = I Int16 | RGBColor | B Bool
--- 65,536 + 5 = 65,541
 #+end_src
 
 #+ATTR_REVEAL: :frag (appear)
-The total number of members is the /sum/ of the members from each constructor.
+65,536 + 3 + 2 = 65,541
+
+#+ATTR_REVEAL: :frag (appear)
+The total number of members is the /sum/ of the members from each constituent type.
 
 ** The Constructors /Tag/ the Values
 Why can't we do this?
