@@ -358,5 +358,36 @@ startTodo todo = case (status todo) of
   _ -> Left "Can only start a new todo."
 #+end_src
 
-* More About Unions
-tagged, untagged, discriminated, disjoint
+* Bonus: Untagged Unions
+
+** 
+C has a ~union~ type:
+#+begin_src c
+union Data {
+   int i;
+   float f;
+};
+
+union Data data;
+data.i = 42;
+printf( "data.f : %f\n", data.f);
+#+end_src
+
+#+ATTR_REVEAL: :frag (appear)
+It's typically used to /convert/ between types.
+
+** 
+But it's /untagged/ so we don't know what type is stored in it.
+
+Actually, it's any and all of the types.
+
+** 
+In order to use it as a sum type, we need to tag it ourselves:
+#+begin_src c
+struct MyStruct {
+  bool is_int;
+  union Data data;
+};
+
+
+#+end_src
