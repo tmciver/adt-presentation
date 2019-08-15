@@ -1,5 +1,5 @@
 digraph {
         node [shape=record];
 
-        Fruit -> {Apply, Cherry, Banana} [dir=back, arrowtail=empty]
+        Fruit -> {Apple, Cherry, Banana} [dir=back, arrowtail=empty]
 }
