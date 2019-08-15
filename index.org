@@ -257,11 +257,11 @@ type RGBColorAndBool = (RGBColor, Bool)
 #+ATTR_REVEAL: :frag (appear)
 #+begin_src haskell
 rgbColorAndBool1 = (Red, True)
-rgbColorAndBool1 = (Green, True)
-rgbColorAndBool1 = (Blue, True)
-rgbColorAndBool1 = (Red, False)
-rgbColorAndBool1 = (Green, False)
-rgbColorAndBool1 = (Blue, False)
+rgbColorAndBool2 = (Green, True)
+rgbColorAndBool3 = (Blue, True)
+rgbColorAndBool4 = (Red, False)
+rgbColorAndBool5 = (Green, False)
+rgbColorAndBool6 = (Blue, False)
 #+end_src
 
 #+ATTR_REVEAL: :frag (appear)

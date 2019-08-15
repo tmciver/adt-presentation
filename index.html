@@ -26,19 +26,19 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Algebraic Data Types</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2019-08-14 Wed 18:20</p>
+<section id="sec-title-slide"><h1 class="title">Algebraic Data Types</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2019-08-14 Wed 21:45</p>
 </section>
 <section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-org1e8447e">What's a Type?</a></li>
-<li><a href="#/slide-org6f936aa">Sum Types</a></li>
-<li><a href="#/slide-orgb327508">Product Types</a></li>
-<li><a href="#/slide-orgc988041">ADTs in OOP</a></li>
-<li><a href="#/slide-orge9a0341">Example Model</a></li>
-<li><a href="#/slide-orgc689648">Bonus: Untagged Unions</a></li>
+<li><a href="#/slide-org1d3c295">What's a Type?</a></li>
+<li><a href="#/slide-orgb1b4555">Sum Types</a></li>
+<li><a href="#/slide-org9cb4395">Product Types</a></li>
+<li><a href="#/slide-org5053ff4">ADTs in OOP</a></li>
+<li><a href="#/slide-orgeba8d7d">Example Model</a></li>
+<li><a href="#/slide-org680900f">Bonus: Untagged Unions</a></li>
 </ul>
 </div>
 </div>
@@ -46,12 +46,12 @@
 
 <section>
 <section id="slide-sec-">
-<h2 id="org1e8447e">What's a Type?</h2>
-<div class="outline-text-2" id="text-org1e8447e">
+<h2 id="org1d3c295">What's a Type?</h2>
+<div class="outline-text-2" id="text-org1d3c295">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org5e8f7a3">A type can be thought of as a set of values</h3>
+<h3 id="orgfa09440">A type can be thought of as a set of values</h3>
 <ul>
 <li class="fragment appear">An <code>int</code> can hold only the integers</li>
 <li class="fragment appear">A <code>boolean</code> can hold only the values <code>true</code> and <code>false</code></li>
@@ -64,12 +64,12 @@
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="org6f936aa">Sum Types</h2>
-<div class="outline-text-2" id="text-org6f936aa">
+<h2 id="orgb1b4555">Sum Types</h2>
+<div class="outline-text-2" id="text-orgb1b4555">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="orgf48c2a5">Also Known As</h3>
+<h3 id="orge1541ef">Also Known As</h3>
 <ul>
 <li class="fragment appear">tagged union</li>
 <li class="fragment appear">variant</li>
@@ -79,7 +79,7 @@
 
 </section>
 <section id="slide-sec-">
-<h3 id="org0aa4548">Sum Types</h3>
+<h3 id="org069a921">Sum Types</h3>
 <p>
 Used to create a new type from two or more existing types.
 </p>
@@ -89,7 +89,7 @@ For example, you could create a type that could hold an integer <i>or</i> a stri
 
 </section>
 <section id="slide-sec-">
-<h3 id="orgc6cc485">Haskell's Canonical Union</h3>
+<h3 id="orgfb72906">Haskell's Canonical Union</h3>
 <p>
 In Haskell, the <code>Either</code> data type is used for this purpose:
 </p>
@@ -113,7 +113,7 @@ In Haskell, the <code>Either</code> data type is used for this purpose:
 
 </section>
 <section id="slide-sec-">
-<h3 id="org306f733">In Scala</h3>
+<h3 id="orga64f47a">In Scala</h3>
 <div class="org-src-container">
 
 <pre  class="src src-scala"><code trim><span style="color: #e090d7;">sealed</span> <span style="color: #b4fa70;">trait</span> <span style="color: #8cc4ff;">Either</span>[<span style="color: #e9b2e3;">A</span>, <span style="color: #e9b2e3;">B</span>]
@@ -127,7 +127,7 @@ In Haskell, the <code>Either</code> data type is used for this purpose:
 
 </section>
 <section id="slide-sec-">
-<h3 id="orgdac83ff">What About Three Types?</h3>
+<h3 id="org0a1eddd">What About Three Types?</h3>
 <p>
 In Haskell:
 </p>
@@ -148,7 +148,7 @@ In Haskell:
 
 </section>
 <section id="slide-sec-">
-<h3 id="org04c7a5a">What About Three Types?</h3>
+<h3 id="orgcd8f7ed">What About Three Types?</h3>
 <p>
 Could have also reused <code>IntOrString</code>
 </p>
@@ -174,7 +174,7 @@ Could have also reused <code>IntOrString</code>
 
 </section>
 <section id="slide-sec-">
-<h3 id="org83e6438">A Better Way</h3>
+<h3 id="orgfc10825">A Better Way</h3>
 <p>
 But most languages that support sum types make this much easier.
 </p>
@@ -202,7 +202,7 @@ And then <code>toString</code> becomes:
 
 </section>
 <section id="slide-sec-">
-<h3 id="org21bb9cc">Constructors Don't Need to Accept Values</h3>
+<h3 id="org3e61828">Constructors Don't Need to Accept Values</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #b4fa70;">data</span> <span style="color: #8cc4ff;">RGBColor</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Red</span>
@@ -213,7 +213,7 @@ And then <code>toString</code> becomes:
 
 </section>
 <section id="slide-sec-">
-<h3 id="org9921ac1">How Many Members?</h3>
+<h3 id="org6e1bad6">How Many Members?</h3>
 <div class="org-src-container">
 
 <pre  class="fragment (appear)"><code trim><span style="color: #b4fa70;">data</span> <span style="color: #8cc4ff;">RGBColor</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Red</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">Green</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">Blue</span>
@@ -249,7 +249,7 @@ The total number of members is the <i>sum</i> of the members from each constitue
 
 </section>
 <section id="slide-sec-">
-<h3 id="org650811d">The Constructors <i>Tag</i> the Values</h3>
+<h3 id="org370c6fa">The Constructors <i>Tag</i> the Values</h3>
 <p>
 Why can't we do this?
 </p>
@@ -272,7 +272,7 @@ Instead of this?
 
 </section>
 <section id="slide-sec-">
-<h3 id="orgf0cb9bf">The Constructors <i>Tag</i> the Values (Continued)</h3>
+<h3 id="org6e22062">The Constructors <i>Tag</i> the Values (Continued)</h3>
 <div class="group">
 <p>
 Because of situations like this:
@@ -303,12 +303,12 @@ What <code>Right</code> did we get?
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="orgb327508">Product Types</h2>
-<div class="outline-text-2" id="text-orgb327508">
+<h2 id="org9cb4395">Product Types</h2>
+<div class="outline-text-2" id="text-org9cb4395">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="orgdc5cb18">You've Probably Used Them Before</h3>
+<h3 id="org1c89fb6">You've Probably Used Them Before</h3>
 <ul>
 <li class="fragment appear">pair</li>
 <li class="fragment appear">tuple</li>
@@ -320,7 +320,7 @@ What <code>Right</code> did we get?
 
 </section>
 <section id="slide-sec-">
-<h3 id="org190eb2c">Pairs and Tuples</h3>
+<h3 id="orgd342d49">Pairs and Tuples</h3>
 <p>
 Tuples are like lists of values with two important exceptions:
 </p>
@@ -336,7 +336,7 @@ A pair is simply a two-element tuple.
 
 </section>
 <section id="slide-sec-">
-<h3 id="orgd94bdc7">Tuple Examples</h3>
+<h3 id="org82d2f69">Tuple Examples</h3>
 <div class="org-src-container">
 
 <pre  class="fragment (appear)"><code trim><span style="color: #b4fa70;">type</span> <span style="color: #8cc4ff;">Point</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Double</span>, <span style="color: #8cc4ff;">Double</span>) <span style="color: #73d216;">-- </span><span style="color: #73d216;">(x, y)</span>
@@ -359,7 +359,7 @@ A pair is simply a two-element tuple.
 
 </section>
 <section id="slide-sec-">
-<h3 id="orgbf685a9">Records</h3>
+<h3 id="org936adbb">Records</h3>
 <p>
 Like tuples but each field has a name.
 </p>
@@ -375,7 +375,7 @@ Like tuples but each field has a name.
 
 </section>
 <section id="slide-sec-">
-<h3 id="org2a4f38e">Classes</h3>
+<h3 id="org98531f5">Classes</h3>
 <p>
 Like records but with associated functions (methods).
 </p>
@@ -402,7 +402,7 @@ Like records but with associated functions (methods).
 
 </section>
 <section id="slide-sec-">
-<h3 id="org2f01062">How Many Members?</h3>
+<h3 id="org604392d">How Many Members?</h3>
 <div class="org-src-container">
 
 <pre  class="fragment (appear)"><code trim><span style="color: #b4fa70;">data</span> <span style="color: #8cc4ff;">RGBColor</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">Red</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">Green</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">Blue</span>
@@ -414,11 +414,11 @@ Like records but with associated functions (methods).
 <div class="org-src-container">
 
 <pre  class="fragment (appear)"><code trim><span style="color: #fce94f;">rgbColorAndBool1</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Red</span>, <span style="color: #8cc4ff;">True</span>)
-<span style="color: #fce94f;">rgbColorAndBool1</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Green</span>, <span style="color: #8cc4ff;">True</span>)
-<span style="color: #fce94f;">rgbColorAndBool1</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Blue</span>, <span style="color: #8cc4ff;">True</span>)
-<span style="color: #fce94f;">rgbColorAndBool1</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Red</span>, <span style="color: #8cc4ff;">False</span>)
-<span style="color: #fce94f;">rgbColorAndBool1</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Green</span>, <span style="color: #8cc4ff;">False</span>)
-<span style="color: #fce94f;">rgbColorAndBool1</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Blue</span>, <span style="color: #8cc4ff;">False</span>)
+<span style="color: #fce94f;">rgbColorAndBool2</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Green</span>, <span style="color: #8cc4ff;">True</span>)
+<span style="color: #fce94f;">rgbColorAndBool3</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Blue</span>, <span style="color: #8cc4ff;">True</span>)
+<span style="color: #fce94f;">rgbColorAndBool4</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Red</span>, <span style="color: #8cc4ff;">False</span>)
+<span style="color: #fce94f;">rgbColorAndBool5</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Green</span>, <span style="color: #8cc4ff;">False</span>)
+<span style="color: #fce94f;">rgbColorAndBool6</span> <span style="color: #fcaf3e;">=</span> (<span style="color: #8cc4ff;">Blue</span>, <span style="color: #8cc4ff;">False</span>)
 </code></pre>
 </div>
 
@@ -430,19 +430,19 @@ Like records but with associated functions (methods).
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="orgc988041">ADTs in OOP</h2>
-<div class="outline-text-2" id="text-orgc988041">
+<h2 id="org5053ff4">ADTs in OOP</h2>
+<div class="outline-text-2" id="text-org5053ff4">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org75d6fe3"></h3>
+<h3 id="org54e70ed"></h3>
 <p>
 We know that object oriented classes are a kind of product type, but what about sum types?
 </p>
 
 </section>
 <section id="slide-sec-">
-<h3 id="org9f850c3">Enums</h3>
+<h3 id="org3b993c7">Enums</h3>
 <p>
 An enum is a sum type.
 </p>
@@ -465,7 +465,7 @@ An enum is a sum type.
 
 </section>
 <section id="slide-sec-">
-<h3 id="org7e2c4de">Simulating with Constants</h3>
+<h3 id="orga251207">Simulating with Constants</h3>
 <p>
 You can simulate sum types in languages like C and PHP using constants.
 </p>
@@ -487,7 +487,7 @@ You can simulate sum types in languages like C and PHP using constants.
 
 </section>
 <section id="slide-sec-">
-<h3 id="org1c69e81"></h3>
+<h3 id="org7aaaa0f"></h3>
 <p>
 But the best, albeit verbose, method is sub-classing.
 </p>
@@ -524,12 +524,12 @@ But the best, albeit verbose, method is sub-classing.
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="orge9a0341">Example Model</h2>
-<div class="outline-text-2" id="text-orge9a0341">
+<h2 id="orgeba8d7d">Example Model</h2>
+<div class="outline-text-2" id="text-orgeba8d7d">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org38cb61e">The Obligatory Todo Application</h3>
+<h3 id="org9376ff0">The Obligatory Todo Application</h3>
 <p>
 Let's model a <code>Todo</code>.  A todo should track:
 </p>
@@ -543,7 +543,7 @@ Let's model a <code>Todo</code>.  A todo should track:
 
 </section>
 <section id="slide-sec-">
-<h3 id="orgee4f4c0">Todo (Continued)</h3>
+<h3 id="org4f2f56d">Todo (Continued)</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #b4fa70;">data</span> <span style="color: #8cc4ff;">Status</span> <span style="color: #fcaf3e;">=</span> <span style="color: #8cc4ff;">New</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">Started</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">Completed</span> <span style="color: #fcaf3e;">|</span> <span style="color: #8cc4ff;">Deleted</span>
@@ -566,12 +566,12 @@ Let's model a <code>Todo</code>.  A todo should track:
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="orgc689648">Bonus: Untagged Unions</h2>
-<div class="outline-text-2" id="text-orgc689648">
+<h2 id="org680900f">Bonus: Untagged Unions</h2>
+<div class="outline-text-2" id="text-org680900f">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org60ff2b2"></h3>
+<h3 id="org8450309"></h3>
 <p>
 C has a <code>union</code> type:
 </p>
@@ -594,7 +594,7 @@ It's typically used to <i>convert</i> between types.
 
 </section>
 <section id="slide-sec-">
-<h3 id="org41664a2"></h3>
+<h3 id="org84cb9e0"></h3>
 <p>
 But it's <i>untagged</i> so we don't know what type is stored in it.
 </p>
@@ -605,7 +605,7 @@ Actually, it's any and all of the types.
 
 </section>
 <section id="slide-sec-">
-<h3 id="orga70ce0b"></h3>
+<h3 id="org17e42db"></h3>
 <p>
 In order to use it as a sum type, we need to tag it ourselves:
 </p>
